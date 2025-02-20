@@ -1,0 +1,24 @@
+{
+  "karyawan": [
+    {
+      "nama": "John Doe",
+      "umur": 30,
+      "alamat": {
+        "jalan": "Jl. Merdeka No. 10",
+        "kota": "Jakarta",
+        "provinsi": "DKI Jakarta"
+      },
+      "hobby": ["Membaca", "Bersepeda", "Menulis"]
+    },
+    {
+      "nama": "Jane Smith",
+      "umur": 28,
+      "alamat": {
+        "jalan": "Jl. Pahlawan No. 5",
+        "kota": "Bandung",
+        "provinsi": "Jawa Barat"
+      },
+      "hobby": ["Traveling", "Fotografi", "Memasak"]
+    }
+  ]
+}
