@@ -4,18 +4,19 @@ class Karyawan {
   final Alamat alamat;
   final List<String> hobi;
 
-  Karyawan(
-      {required this.nama,
-      required this.umur,
-      required this.alamat,
-      required this.hobi});
+  Karyawan({
+    required this.nama,
+    required this.umur,
+    required this.alamat,
+    required this.hobi,
+  });
 
   factory Karyawan.fromJson(Map<String, dynamic> json) {
     return Karyawan(
         nama: json['nama'],
         umur: json['umur'],
         alamat: Alamat.fromJson(json['alamat']),
-        hobi: json['hobi']);
+        hobi: List<String>.from(json['hobi']));
   }
 }
 
@@ -28,9 +29,9 @@ class Alamat {
 
   factory Alamat.fromJson(Map<String, dynamic> json) {
     return Alamat(
-      jalan: ['jalan'],
-      kota: ['kota'],
-      provinsi: ['provinsi'],
+      jalan: json['jalan'],
+      kota: json['kota'],
+      provinsi: json['provinsi'],
     );
   }
 }
