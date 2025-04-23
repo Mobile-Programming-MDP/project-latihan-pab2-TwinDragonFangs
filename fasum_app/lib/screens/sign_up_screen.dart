@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:fasum_app/screens/sign_in_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'sign_in_screen.dart';
+import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -13,11 +13,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Registrasi'),
+        title: const Text('Registrasi Akun'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -38,12 +39,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
               decoration:
                   const InputDecoration(labelText: 'Konfirmasi Password'),
             ),
-            const SizedBox(height: 16.0),
-            ElevatedButton(
-              child: const Text('Daftar'),
-              onPressed: () {
-                _registerAccount();
-              },
+            Container(
+              margin: const EdgeInsets.only(top: 16.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  _registerAccount();
+                },
+                child: const Text('Daftar'),
+              ),
             )
           ],
         ),
@@ -58,7 +61,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     } else {
       try {
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
-            email: _emailController.text, password: _passwordController.text);
+            email: _emailController.text, 
+            password: _passwordController.text);
         if (mounted) {
           Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (context) => const SignInScreen()));
