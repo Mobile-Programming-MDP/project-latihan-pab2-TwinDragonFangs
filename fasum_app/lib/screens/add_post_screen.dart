@@ -126,7 +126,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
       //RequestOptions ro = const RequestOptions(apiVersion: 'v1');
       final model = GenerativeModel(
         model: 'gemini-1.5-flash',
-        apiKey: 'AIzaSyCgWMV0km6bGzAncA6VxgZluSwmXNwdaHk',
+        apiKey: 'AIzaSyDxMLBvU8zf1Ze9jAxTKx_RXzJjei08kq4',
         //gunakan api key gemini anda
         //requestOptions: ro,
       );
